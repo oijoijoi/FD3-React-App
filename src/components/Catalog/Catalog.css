@@ -1,12 +1,23 @@
 .catalog__categories {
     display: flex;
     justify-content: space-between;
+    width: 1000px;
 }
 .categories__image {
-    box-sizing: border-box;
+    width: 150px;
+    height: 100px;
+    background: #ffffff;
     border-bottom: 4px solid #ffffff;
+    background-size: cover;
+    background-position: center;
 }
 .categories__image:hover {
     border-bottom: 4px solid #018ac4;
     transition: 0.5s;
+}
+.catalog__goods-list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }

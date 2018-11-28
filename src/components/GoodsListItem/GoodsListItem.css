@@ -1,0 +1,24 @@
+.goods-list-item__wrapper {
+    background: #ffffff;
+    width: calc(25% - 20px);
+    margin: 10px;
+}
+.goods-list-item__wrapper:hover {
+    background: #018ac4;
+}
+.goods-list-item__image {
+    width: 100%;
+    padding: 2px;
+}
+.goods-list-item__name {
+    font-size: 14px;
+    height: 38px;
+    overflow: hidden;
+    padding: 2px;
+}
+.goods-list-item__price {
+    text-align: right;
+    font-weight: bold;
+    font-size: 120%;
+    padding: 2px;
+}

@@ -11,7 +11,7 @@ class Routes extends React.Component {
         return (
             <div>
                 <Route path='/' exact component={HomePage} />
-                <Route path='/catalog/' component={CatalogPage} />
+                <Route path='/catalog/' exact component={CatalogPage} />
                 <Route path='/catalog/item/:itemid' component={SingleItemPage} />
                 <Route path='/cart/' component={CartPage} />
             </div>

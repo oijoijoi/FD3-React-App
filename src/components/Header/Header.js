@@ -7,12 +7,13 @@ import './Header.css';
 
 class Header extends React.Component {
     render() {
+        let logoUrl = require(`../../img/logo.png`);
         return (
             <header className="header__wrapper">
-                <div>
-                    <img src="http://clubturbo.ru/images/template/logo1.png" alt=""/>
-                    <NavLink to='/' exact className="asdfasdf" activeClassName='asdf'>Главная</NavLink>
-                    <NavLink to='/catalog/' className="asdfasdf" exact activeClassName='asdf'>Каталог</NavLink>
+                <div className="header__menu">
+                    <img src={logoUrl} alt=""/>
+                    <NavLink to='/' exact className="header-link">Главная</NavLink>
+                    <NavLink to='/catalog/' className="header-link">Каталог</NavLink>
                 </div>
                 <CartMinimal />
             </header>

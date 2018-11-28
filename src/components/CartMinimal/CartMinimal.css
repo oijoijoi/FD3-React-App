@@ -1,0 +1,22 @@
+.cart-min__wrapper {
+    display: flex;
+}
+
+.cart-min__link {
+    margin: 0 20px;
+    line-height: 32px;
+    color: white;
+    font-weight: bold;
+}
+
+.cart-min__counter {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    color: black;
+    padding: 0 2px;
+    line-height: 20px;
+    min-width: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+}
