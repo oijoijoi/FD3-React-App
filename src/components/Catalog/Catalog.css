@@ -1,0 +1,12 @@
+.catalog__categories {
+    display: flex;
+    justify-content: space-between;
+}
+.categories__image {
+    box-sizing: border-box;
+    border-bottom: 4px solid #ffffff;
+}
+.categories__image:hover {
+    border-bottom: 4px solid #018ac4;
+    transition: 0.5s;
+}
