@@ -16,21 +16,23 @@ class GoodsListItem extends React.Component {
     };
 
     addToCart = () => {
-        console.log(localStorage.shopCart);
-        let cart = JSON.parse(localStorage.shopCart);
+        let cart = sessionStorage.shopCart ? JSON.parse(sessionStorage.shopCart).sort() : [];
         console.log(cart);
         cart.push(this.props.info.id);
-        localStorage.shopCart = JSON.stringify(cart);
+        sessionStorage.shopCart = JSON.stringify(cart);
     };
 
     render() {
         const url = `/catalog/item/${this.props.info.id}`;
         return (
-            <NavLink to={url} className="goods-list-item__wrapper">
-                <img src={this.props.info.image} alt="" className="goods-list-item__image" />
-                <div className="goods-list-item__name">{this.props.info.name}</div>
-                <div className="goods-list-item__price">{this.props.info.price} р <input type='button' value='В корзину' onClick={this.addToCart}></input></div>
-            </NavLink>
+            <div className="goods-list-item__wrapper">
+                <NavLink to={url}>
+                    <img src={this.props.info.image} alt="" className="goods-list-item__image" />
+                    <div className="goods-list-item__name">{this.props.info.name}</div>
+                    <div className="goods-list-item__price">{this.props.info.price} р </div>
+                </NavLink>
+                <input type='button' value='В корзину' onClick={this.addToCart}></input>
+            </div>
         )
     }
 }

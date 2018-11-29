@@ -24,35 +24,54 @@ class Catalog extends React.Component {
     state = {
         categories: this.props.categories,
         goods: this.props.goods,
+        page: 1,
+        pageLimit: 12,
     };
 
-    // filterList = (EO) => {
-    //     console.log(this.props.match.params.item);
-    //     EO.target.classList.toggle('categories__selected');
-    //     let newGoodsList = this.props.goods.filter(item => {
-    //         console.log(item.category);
-    //         return item.category === EO.target.id;
-    //     });
-    //     console.log(newGoodsList);
-    //     this.setState({goods: newGoodsList});
-    // };
+    pageChange = (EO) => {
+        this.setState({page: EO.target.id})
+    }
 
     render() {
+
+        //Категории
         let categories = this.state.categories.map( item => {
             let imageUrl = require(`../../img/${item}.png`);
             let url = `/catalog/:${item}`;
-            return <NavLink to={url} style={{ backgroundImage: `url(${imageUrl})` }} key={item} className="categories__image" id={item} />
+            return <NavLink to={url} style={{ backgroundImage: `url(${imageUrl})` }} key={item} className="categories__image" id={item} >
+                <div className="categories__title">
+                    {item}
+                </div>
+            </NavLink>
             }
         );
-        let goodsList = this.state.goods.map ( item => {
+        
+        //Товары на странице
+        let startPoint = (this.state.page-1)*this.state.pageLimit;
+        let endPoint = this.state.page*this.state.pageLimit;
+        let goodsOnPage = this.state.goods.slice(startPoint,endPoint);
+        let goodsList = goodsOnPage.map ( item => {
             return <GoodsListItem key={item.id} info={item} />
         });
 
+        //Пагинатор
+        let pagination = null;
+        if (this.state.goods.length > this.state.pageLimit) {
+            let pages = Math.ceil(this.state.goods.length/this.state.pageLimit);
+            let paginator = [];
+            for (let i=0; i<pages; i++) {
+                paginator.push(<button onClick={this.pageChange} key={i} id={i+1}>{i+1}</button>)
+            }
+            pagination = <div className="catalog__paginator">{paginator}</div>;
+        } 
+
         return (
             <div>
+                Категории                
                 <div className="catalog__categories">
                     {categories}
                 </div>
+                {pagination}
                 <div className="catalog__goods-list">
                     {goodsList}
                 </div>

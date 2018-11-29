@@ -5,19 +5,31 @@
 }
 .categories__image {
     width: 150px;
-    height: 100px;
+    height: 120px;
     background: #ffffff;
     border-bottom: 4px solid #ffffff;
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 .categories__image:hover {
     border-bottom: 4px solid #018ac4;
     transition: 0.5s;
+}
+.categories__title {
+    margin-top: 100px;
+    line-height: 20px;
+    text-align: center;
+}
+.categories__image:hover > .categories__title {
+    visibility: visible;
 }
 .catalog__goods-list {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+}
+.catalog__paginator {
+    text-align: center;
 }

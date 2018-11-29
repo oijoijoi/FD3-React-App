@@ -5,7 +5,7 @@ class CartPage extends React.PureComponent {
     render() {
         return (
             <div>
-                <Cart />
+                <Cart goods={JSON.parse(localStorage.goodsList)}/>
             </div>
         )
     }

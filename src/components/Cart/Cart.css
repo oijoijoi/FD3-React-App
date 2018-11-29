@@ -1,0 +1,24 @@
+.cart-item__wrapper {
+    width: calc(100% - 10px);
+    margin: 5px auto;
+    display: flex;
+}
+
+.cart-item__image {
+    height: 150px;
+}
+.cart-item__info {
+    margin-left: 10px;
+}
+.cart-item__title {
+    font-weight: bold;
+}
+.cart-item__description {
+    line-height: 16px;
+    max-height: 32px;
+    overflow: hidden;
+}
+.cart-item__price {
+    font-weight: bold;
+    margin: 5px 0;
+}

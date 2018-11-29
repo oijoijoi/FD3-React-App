@@ -15,7 +15,7 @@ class Home extends React.PureComponent {
 
     render() {
         return (
-            <div>
+            <div className="main-page__wrapper">
                 Текст {this.state.text}
             </div>
         )
