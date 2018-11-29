@@ -8,7 +8,7 @@ class Cart extends React.PureComponent {
     render() {
         return (
             <div>
-                Cart
+                {window.localStorage.shopCart}
             </div>
         )
     }
