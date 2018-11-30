@@ -1,14 +1,13 @@
 .main__wrapper {
     display: flex;
     flex-direction: column;
-    width: 1000px;
+    justify-content: flex-start;
     margin: auto;
+    min-height: 100vh;
 }
 .footer__wrapper {
     background: #018ac4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-self: flex-end;
     width: 100%;
     height: 70px;
 }

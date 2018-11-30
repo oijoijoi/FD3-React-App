@@ -1,9 +1,12 @@
 .goods-list-item__wrapper {
     background: #ffffff;
-    width: calc(25% - 20px);
+    position: relative;
+    width: 230px;
     margin: 10px;
+    transition: 300ms;
 }
 .goods-list-item__wrapper:hover {
+    color: white;
     background: #018ac4;
 }
 .goods-list-item__image {
@@ -21,4 +24,21 @@
     font-weight: bold;
     font-size: 120%;
     padding: 2px;
+}
+.add__button {
+    width: calc(100% - 10px);
+    margin: 5px;
+    border: 0;
+    border-radius: 5px;
+    line-height: 32px;
+    outline: none;
+    font-size: 18px;
+    transition: 100ms;
+    background: dimgray;
+}
+.add__button:hover {
+    color: white;
+}
+.add__button.OK {
+    background: green;
 }

@@ -6,9 +6,6 @@
     width: 100%;
     height: 70px;
 }
-.header__cart {
-    align-self: right;
-}
 .header__menu {
     display: flex;
     margin: 0 15px;

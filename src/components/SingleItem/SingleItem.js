@@ -16,7 +16,6 @@ class SingleItem extends React.PureComponent {
 
     addToCart = () => {
         let cart = sessionStorage.shopCart ? JSON.parse(sessionStorage.shopCart).sort() : [];
-        console.log(cart);
         cart.push(this.props.info.id);
         sessionStorage.shopCart = JSON.stringify(cart);
     };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import GoodsListItem from '../GoodsListItem/GoodsListItem';
@@ -26,23 +26,39 @@ class Catalog extends React.Component {
         goods: this.props.goods,
         page: 1,
         pageLimit: 12,
+        catTitles: ['Двигатель','Электрика','Подвеска','Тормоза','Салон','Кузов'],
+        selectedCat: null,
     };
 
     pageChange = (EO) => {
         this.setState({page: EO.target.id})
-    }
+    };
+
+    filterList = (EO) => {
+        let selected = EO.target.id;
+        if (this.state.selectedCat === selected) {
+            this.setState({goods:this.props.goods, selectedCat: null});
+            EO.target.classList.remove('categories__image__on');
+            return;
+        }
+
+        let a =EO.target.parentElement;
+        a.childNodes.forEach(element => element.classList.remove('categories__image__on'));
+
+        let newArray = this.props.goods.filter(item => item.category === selected);
+        this.setState({goods: newArray, selectedCat: selected, page: 1});
+        EO.target.classList.add('categories__image__on');
+    };
 
     render() {
 
         //Категории
         let categories = this.state.categories.map( item => {
             let imageUrl = require(`../../img/${item}.png`);
-            let url = `/catalog/:${item}`;
-            return <NavLink to={url} style={{ backgroundImage: `url(${imageUrl})` }} key={item} className="categories__image" id={item} >
+            return <div style={{ backgroundImage: `url(${imageUrl})` }} key={item} className="categories__image" id={item} onClick={this.filterList} >
                 <div className="categories__title">
-                    {item}
                 </div>
-            </NavLink>
+            </div>
             }
         );
         
@@ -66,8 +82,8 @@ class Catalog extends React.Component {
         } 
 
         return (
-            <div>
-                Категории                
+            <div className="catalog__wrapper">
+                <h4 className="catalog__title">Выбор категории товаров</h4>
                 <div className="catalog__categories">
                     {categories}
                 </div>
@@ -75,6 +91,7 @@ class Catalog extends React.Component {
                 <div className="catalog__goods-list">
                     {goodsList}
                 </div>
+                {pagination}
             </div>
         )
     }

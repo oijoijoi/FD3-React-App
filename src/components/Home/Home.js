@@ -14,8 +14,10 @@ class Home extends React.PureComponent {
     };
 
     render() {
+        let mainLogo = require(`../../img/main-logo.png`);
         return (
             <div className="main-page__wrapper">
+                <img src={mainLogo} alt="" className="main-page__logo"/>
                 Текст {this.state.text}
             </div>
         )

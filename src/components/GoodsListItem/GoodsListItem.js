@@ -15,11 +15,18 @@ class GoodsListItem extends React.Component {
         }),
     };
 
-    addToCart = () => {
+    addToCart = (EO) => {
         let cart = sessionStorage.shopCart ? JSON.parse(sessionStorage.shopCart).sort() : [];
-        console.log(cart);
         cart.push(this.props.info.id);
         sessionStorage.shopCart = JSON.stringify(cart);
+        this.addedFunc(EO)
+    };
+
+    addedFunc = (EO) => {
+        let element = EO.target;
+        element.classList.add('OK');
+        element.value = 'Добавлено';
+        setTimeout(() => {element.classList.remove('OK');element.value='В корзину';}, 1000)
     };
 
     render() {
@@ -31,7 +38,7 @@ class GoodsListItem extends React.Component {
                     <div className="goods-list-item__name">{this.props.info.name}</div>
                     <div className="goods-list-item__price">{this.props.info.price} р </div>
                 </NavLink>
-                <input type='button' value='В корзину' onClick={this.addToCart}></input>
+                <input type='button' value='В корзину' onClick={this.addToCart} className="add__button"/>
             </div>
         )
     }

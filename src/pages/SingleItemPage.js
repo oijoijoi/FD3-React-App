@@ -9,7 +9,6 @@ class SingleItemPage extends React.PureComponent {
             return item.id === this.props.match.params.itemid;
         });
         item = item[0];
-        console.log(item);
         return (
             <div>
                 <SingleItem info={item}/>
