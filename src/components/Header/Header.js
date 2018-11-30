@@ -12,9 +12,9 @@ class Header extends React.Component {
         return (
             <header className="header__wrapper">
                 <div className="header__menu">
-                    <img src={logoUrl} alt=""/>
+                    <img src={logoUrl} alt="" className="header-logo" />
                     <NavLink to='/' exact className="header-link">Главная</NavLink>
-                    <NavLink to='/catalog/' className="header-link">Каталог</NavLink>
+                    <NavLink to='/catalog/' className="header-link" >Каталог</NavLink>
                 </div>
                 <CartMinimal />
             </header>

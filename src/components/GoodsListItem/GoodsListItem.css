@@ -23,22 +23,35 @@
     text-align: right;
     font-weight: bold;
     font-size: 120%;
-    padding: 2px;
+    padding: 5px;
 }
 .add__button {
     width: calc(100% - 10px);
     margin: 5px;
-    border: 0;
-    border-radius: 5px;
+    border: 1px solid black;
     line-height: 32px;
     outline: none;
     font-size: 18px;
     transition: 100ms;
-    background: dimgray;
+    background: none;
 }
 .add__button:hover {
     color: white;
+    border-color: white;
 }
 .add__button.OK {
     background: green;
+}
+
+@media (max-width: 500px) {
+    .goods-list-item__wrapper {
+        width: calc(100% / 2);
+        margin: 0;
+    }
+}
+@media (max-width: 400px) {
+    .goods-list-item__wrapper {
+        width: 100%;
+        padding: 20px;
+    }
 }

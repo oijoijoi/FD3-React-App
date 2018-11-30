@@ -5,6 +5,36 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import data from './data/data.json';
+// function loadData() {
+//     var ajaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php";
+
+//     // отдельно создаём набор POST-параметров запроса
+//     let sp = new URLSearchParams();
+//     sp.append('f', 'LOCKGET');
+//     sp.append('n', 'LOBANOV_SHOP_DATA');
+//     sp.append('p', '123asd');
+
+//     fetch(ajaxHandlerScript, { method: 'post', body: sp })
+//         .then( response => response.json() )
+//         .then( data => { inputData() } )
+//         .catch( error => { console.error(error); } );
+// }
+// function inputData() {
+//     var ajaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php";
+
+//     // отдельно создаём набор POST-параметров запроса
+//     let sp = new URLSearchParams();
+//     sp.append('f', 'UPDATE');
+//     sp.append('n', 'LOBANOV_SHOP_DATA');
+//     sp.append('p', '123asd');
+//     sp.append('v', JSON.stringify(data.goods));
+
+//     fetch(ajaxHandlerScript, { method: 'post', body: sp })
+//         .then( response => response.json() )
+//         .then( data => { console.log(data) } )
+//         .catch( error => { console.error(error); } );
+// }
+// loadData();
 
 const cart = [];
 window.localStorage.setItem('catalogSections', JSON.stringify(data.catalogSections));

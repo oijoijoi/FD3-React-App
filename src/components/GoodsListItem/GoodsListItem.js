@@ -26,7 +26,7 @@ class GoodsListItem extends React.Component {
         let element = EO.target;
         element.classList.add('OK');
         element.value = 'Добавлено';
-        setTimeout(() => {element.classList.remove('OK');element.value='В корзину';}, 1000)
+        setTimeout(() => {element.classList.remove('OK');element.value='В корзину';}, 450)
     };
 
     render() {

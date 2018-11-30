@@ -1,6 +1,22 @@
 .main-page__wrapper {
     background: #CF161E;
+    min-height: calc(100vh - 140px);
 }
 .main-page__logo {
     width: 100%;
+}
+.main-page__text {
+    max-width: 800px;
+    margin: auto;
+    color: white;
+    padding: 10px 10px;
+}
+.main-page__list {
+    margin: 0;
+}
+
+@media (max-width: 550px) {
+    .main-page__logo {
+        display: none;
+    }
 }

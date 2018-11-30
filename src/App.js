@@ -18,7 +18,7 @@ class App extends React.PureComponent {
                 <div className="main__wrapper">
                     <Header cartCounter={this.state.cartCounter} />
                     <Routes />
-                    <footer className="footer__wrapper">Тут будет футтер</footer>
+                    <footer className="footer__wrapper">© "Clubturbo" 2008-2016 Все права защищены</footer>
                 </div>
             </BrowserRouter>
         );

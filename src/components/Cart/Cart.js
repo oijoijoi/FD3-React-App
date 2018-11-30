@@ -59,19 +59,19 @@ class Cart extends React.Component {
             return <CartItem key={item.id} info={item} sendItemForDelete={this.removeItemFromCart} />
         });
 
-        let clearButton = <input type="button" onClick={this.clearCartAlert} value="Очистить" className="cart__button" />;
+        let clearButton = <input type="button" onClick={this.clearCartAlert} value="Очистить" className="cart__button small-button" />;
         if (this.state.clearConfirm) {
             clearButton = <div className="cart__clear">
                 <span>Очистить?</span>
-                <input type="button" onClick={this.clearCart} value="Да" className="cart__button" />
-                <input type="button" onClick={this.clearCartAlert} value="Нет" className="cart__button" />
+                <input type="button" onClick={this.clearCart} value="Да" className="cart__button small-button" />
+                <input type="button" onClick={this.clearCartAlert} value="Нет" className="cart__button small-button" />
             </div>;
         }
 
         let summary = (totalSumm!==0) ? <div className="cart__info">
             <h3>Сумма:<br /> {totalSumm} р</h3>
             {clearButton}
-            <input type="button" value="Оформить заказ" className="cart__button" />
+            <input type="button" value="Оформить заказ" className="cart__button small-button" />
         </div> : null;
 
         return (

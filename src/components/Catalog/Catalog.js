@@ -33,6 +33,20 @@ class Catalog extends React.Component {
     pageChange = (EO) => {
         this.setState({page: EO.target.id})
     };
+    pagePrew = () => {
+        let page = this.state.page;
+        if (page > 1) {
+            page--;
+            this.setState({page:page});
+        }
+    }
+    pageNext = (EO) => {
+        let page = this.state.page;
+        if (page < EO.target.previousElementSibling.id) {
+            page++;
+            this.setState({page:page});
+        }
+    }
 
     filterList = (EO) => {
         let selected = EO.target.id;
@@ -75,9 +89,11 @@ class Catalog extends React.Component {
         if (this.state.goods.length > this.state.pageLimit) {
             let pages = Math.ceil(this.state.goods.length/this.state.pageLimit);
             let paginator = [];
+            paginator.push(<button onClick={this.pagePrew} className="pagination__button" key='prew'>&#11164;</button>);
             for (let i=0; i<pages; i++) {
-                paginator.push(<button onClick={this.pageChange} key={i} id={i+1}>{i+1}</button>)
+                paginator.push(<button onClick={this.pageChange} key={i} id={i+1} className="pagination__button">{i+1}</button>)
             }
+            paginator.push(<button onClick={this.pageNext} className="pagination__button" key='next'>&#11166;</button>)
             pagination = <div className="catalog__paginator">{paginator}</div>;
         } 
 

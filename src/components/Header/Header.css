@@ -11,8 +11,45 @@
     margin: 0 15px;
 }
 .header-link {
+    position: relative;
     margin: 0 20px;
     line-height: 32px;
     color: white;
     font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+.header-link:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 21px;
+    left: -5px;
+    right: calc(100% + 5px);
+    height: 4px;
+    background: #dd0000;
+    z-index: 1;
+    transition: ease-out 300ms;
+}
+.header-link:hover:before {
+    right: -5px;
+}
+
+@media (max-width: 550px) {
+    .header-logo {
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    .header__wrapper {
+        height: auto;
+        flex-direction: column;
+    }
+    .header__menu {
+        flex-direction: column;
+    }
+    .header-link {
+        text-align: center;
+    }
 }
